@@ -42,12 +42,16 @@
 - Use an existing VCN or create a dedicated vcn (preferred) in a public or a private subnet (preferred if vpn or fastconnect)
 - Create a free-tier compute instance using the Autonomous Linux 7.9 image
 - Create a Dynamic Group called OCI_Scripting and add the OCID of your instance to the group, using this command:
+```
 	ANY {instance.id = 'OCID_of_your_Compute_Instance'}
-- Create a root level policy, giving your dynamic group permission to manage all-resources in tenancy:
-	llow dynamic-group OCI_Scripting to manage all-resources in tenancy
+```	
 
+- Create a root level policy, giving your dynamic group permission to manage all-resources in tenancy:
+```
+	allow dynamic-group OCI_Scripting to manage all-resources in tenancy
+```
 - Login to your instance using an SSH connection
-- run the following commands:
+	- un the following commands:
 
 ```
   - sudo yum update -y
@@ -57,6 +61,7 @@
   - cd ./OCI-TagCompute
   - python3 OCI-TagCompute.py
 ```
+
 
 # How to use
 ##### Default - No argument:
