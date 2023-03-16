@@ -5,7 +5,6 @@
 # has a policy including proper statements.
 
 # Install needed components and configure crontab
-cronjob='0 23 * * * python3 /home/opc/OCI-TagCompute/OCI-TagCompute.py'
 
 echo''
 echo '*** run yum update ***'
@@ -29,7 +28,7 @@ echo ''
 echo '*** install cron job ***'
 cd OCI-TagCompute/
 crontab -l > ./cron.tmp
-echo $cronjob >> ./cron.tmp
+echo '0 23 * * * python3 /home/opc/OCI-TagCompute/OCI-TagCompute.py' >> ./cron.tmp
 crontab ./cron.tmp
 rm ./cron.tmp
 crontab -l
