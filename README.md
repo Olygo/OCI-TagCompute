@@ -87,19 +87,19 @@ without arguments **OCI-TagCompute** tries to authenticate using Instance Princi
 	python3 ./OCI-TagCompute.py -cf -rg eu-paris-1 -tlc ocid1.compartment.oc1..aaaaaaaaurxxxx -t TagName2023
 
 Display all tagged resources
-![Script Output](./output.png)
+![Script Output](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/output.png)
 
 Instance tag
-![Tag Instance](./tagInstance.png)
+![Tag Instance](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/tagInstance.png)
 
 Instance resources are also tagged (storage & backups)
-![Tag Resource](./tagBoot.png)
+![Tag Resource](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/tagBoot.png)
 
 Filter cost analysis using freeform tag: display_name:XXXXX
-![Cost Analysis](./CostAnalysis1.png)
+![Cost Analysis](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/CostAnalysis1.png)
 
 See costs associated to all the resources attached to my instance (compute, storage, backup):
-![Cost Analysis](./CostAnalysis2.png)
+![Cost Analysis](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/CostAnalysis2.png)
 
 
 ## Disclaimer
