@@ -5,11 +5,30 @@
 # has a policy including proper statements.
 
 # Install needed components and configure crontab
+
+echo '*** run yum update ***'
 sudo yum update -y
+echo ''
+echo '*** install git ***'
 sudo yum install git -y
+echo ''
+echo '*** install oci-cli & oci-python-sdk ***'
 python3 -m pip install oci oci-cli --user
-
+echo ''
+echo '*** oci-cli version ***'
+python3 -m pip show oci-cli --version | grep Version
+echo ''
+echo '*** oci-python-sdk version ***'
+python3 -m pip show oci --version | grep Version
+echo ''
+echo '*** git clone from Olygo repo ***'
 git clone https://github.com/Olygo/OCI-TagCompute.git
-
+echo ''
+echo '*** install cron job ***'
 cd OCI-TagCompute/
-crontab schedule.cron
+crontab -l > ./cron.tmp
+cat schedule.cron >> ./cron.tmp
+crontab ./cron.tmp
+rm ./cron.tmp
+crontab -l
+echo''
