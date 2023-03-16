@@ -90,16 +90,16 @@ Display all tagged resources
 ![Script Output](./output.png)
 
 Instance tag
-![Tag Instance](./taginstance.png)
+![Tag Instance](./tagInstance.png)
 
 Instance resources are also tagged (storage & backups)
-![Tag Resource](./tagboot.png)
+![Tag Resource](./tagBoot.png)
 
 Filter cost analysis using freeform tag: display_name:XXXXX
-![Cost Analysis](./costanalysis1.png)
+![Cost Analysis](./CostAnalysis1.png)
 
 See costs associated to all the resources attached to my instance (compute, storage, backup):
-![Cost Analysis](./costanalysis2.png)
+![Cost Analysis](./CostAnalysis2.png)
 
 
 ## Disclaimer
