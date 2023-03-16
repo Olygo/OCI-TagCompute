@@ -26,14 +26,14 @@
 -**Parameters for execution:**
 
 ```
--cs                  	authenticate through CloudShell Delegation Token
--cf                  	authenticate through local OCI config_file
--cfp  config_file     	change OCI config_file path, default: ~/.oci/config
--cp   config_profile  	indicate config file section to use, default: DEFAULT
--t    tag_key         	change key name to use in the freeform tag, default: display_name
--tlc  compartment_ocid   scan only a specific compartment, default: scan from root compartment
--rg   region_name  		scan only a specific region, default: scan all regions
--h,   --help           	show this help message and exit
+-cs                  		authenticate through CloudShell Delegation Token
+-cf                  		authenticate through local OCI config_file
+-cfp  config_file     		change OCI config_file path, default: ~/.oci/config
+-cp   config_profile  		indicate config file section to use, default: DEFAULT
+-t    tag_key         		change key name to use in the freeform tag, default: display_name
+-tlc  compartment_ocid   	scan only a specific compartment, default: scan from root compartment
+-rg   region_name  			scan only a specific region, default: scan all regions
+-h,   --help           		show this help message and exit
 
 ```
 
