@@ -32,7 +32,7 @@
 -cp   config_profile  		indicate config file section to use, default: DEFAULT
 -t    tag_key         		change key name to use in the freeform tag, default: display_name
 -tlc  compartment_ocid   	scan only a specific compartment, default: scan from root compartment
--rg   region_name  			scan only a specific region, default: scan all regions
+-rg   region_name   		scan only a specific region, default: scan all regions
 -h,   --help           		show this help message and exit
 
 ```
