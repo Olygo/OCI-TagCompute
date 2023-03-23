@@ -22,12 +22,12 @@ default_c='\033[0m'
 
 def list_instances(core_client, compartment_id):
 
-    Excluded_States=['TERMINATED', 'TERMINATING', 'DELETING', 'DELETED', 'CREATING']
+    Good_States=['RUNNING', 'STOPPED']
     my_instances=[]
     instances=oci.pagination.list_call_get_all_results(core_client.list_instances, compartment_id=compartment_id).data
 
     for instance in instances:
-        if (instance.lifecycle_state not in Excluded_States):
+        if (instance.lifecycle_state in Good_States):
             # print(instance)
             # print(instance.region)
             # print(compartment.name)
@@ -48,17 +48,18 @@ def list_instances_bootvol(core_client, availability_domain, compartment_id, ins
     boot_volumes=oci.pagination.list_call_get_all_results(core_client.list_boot_volume_attachments,availability_domain=availability_domain, compartment_id=compartment_id, instance_id=instance_id).data
 
     for bootvol in boot_volumes:
-        # print(bootvol)
-        # print(bootvol.display_name)
-        # print(bootvol.iboot_volume_idd)
-        # print(bootvol.availability_domain)
-        # print(bootvol.compartment_id)
-        # print(bootvol.encryption_in_transit_type)
-        # print(bootvol.instance_id)
-        # print(bootvol.lifecycle_state)
-        # print(bootvol.time_created)
+        if bootvol.lifecycle_state == 'AVAILABLE':
+            # print(bootvol)
+            # print(bootvol.display_name)
+            # print(bootvol.iboot_volume_idd)
+            # print(bootvol.availability_domain)
+            # print(bootvol.compartment_id)
+            # print(bootvol.encryption_in_transit_type)
+            # print(bootvol.instance_id)
+            # print(bootvol.lifecycle_state)
+            # print(bootvol.time_created)
 
-        my_bootvol.append(bootvol)
+            my_bootvol.append(bootvol)
 
     return my_bootvol
 
@@ -72,14 +73,15 @@ def list_boot_volume_backups(blk_storage_client, compartment_id, boot_volume_id)
     bootvol_backups=oci.pagination.list_call_get_all_results(blk_storage_client.list_boot_volume_backups, compartment_id=compartment_id, boot_volume_id=boot_volume_id).data
     
     for bootvolbkp in bootvol_backups:
-        # print(bootvolbkp.display_name)
-        # print(bootvolbkp.lifecycle_state)
-        # print(bootvolbkp.unique_size_in_gbs)
-        # print(bootvolbkp.source_type)
-        # print(bootvolbkp.time_created.strftime('%Y-%m-%d %H:%M:%S'))
-        # print(bootvolbkp.type)
+        if bootvolbkp.lifecycle_state == 'AVAILABLE':
+            # print(bootvolbkp.display_name)
+            # print(bootvolbkp.lifecycle_state)
+            # print(bootvolbkp.unique_size_in_gbs)
+            # print(bootvolbkp.source_type)
+            # print(bootvolbkp.time_created.strftime('%Y-%m-%d %H:%M:%S'))
+            # print(bootvolbkp.type)
 
-        my_bootvol_backups.append(bootvolbkp)
+            my_bootvol_backups.append(bootvolbkp)
     return my_bootvol_backups
 
 
@@ -111,6 +113,8 @@ def list_volume_backups(blk_storage_client, compartment_id, volume_id):
     items=oci.pagination.list_call_get_all_results(blk_storage_client.list_volume_backups, compartment_id=compartment_id, volume_id=volume_id).data
     
     for blkvolbkp in items:
+        if blkvolbkp.lifecycle_state == 'AVAILABLE':
+
         # print(blkvolbkp.display_name)
         # print(blkvolbkp.lifecycle_state)
         # print(blkvolbkp.unique_size_in_gbs)
@@ -118,5 +122,5 @@ def list_volume_backups(blk_storage_client, compartment_id, volume_id):
         # print(blkvolbkp.time_created.strftime('%Y-%m-%d %H:%M:%S'))
         # print(blkvolbkp.type)
 
-        my_blk_backups.append(blkvolbkp)
+            my_blk_backups.append(blkvolbkp)
     return my_blk_backups

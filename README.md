@@ -101,6 +101,9 @@ Filter cost analysis using freeform tag: display_name:XXXXX
 See costs associated to all the resources attached to my instance (compute, storage, backup):
 ![Cost Analysis](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/ArOLIb0vUtXvhlffPSXKqA1V7pkm4l_Ecrj7pqEXWJ6tL-BSGg41CWqsIEeUMOa9/n/olygo/b/git_images/o/OCI-TagCompute/CostAnalysis2.png)
 
+## Questions ?
+**_olygo.git@gmail.com_**
+
 
 ## Disclaimer
 **Please test properly on test resources, before using it on production resources to prevent unwanted outages or unwanted bills.**
