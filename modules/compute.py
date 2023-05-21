@@ -48,7 +48,7 @@ def list_instances_bootvol(core_client, availability_domain, compartment_id, ins
     boot_volumes=oci.pagination.list_call_get_all_results(core_client.list_boot_volume_attachments,availability_domain=availability_domain, compartment_id=compartment_id, instance_id=instance_id).data
 
     for bootvol in boot_volumes:
-        if bootvol.lifecycle_state == 'AVAILABLE':
+        #if bootvol.lifecycle_state == 'ATTACHED':
             # print(bootvol)
             # print(bootvol.display_name)
             # print(bootvol.iboot_volume_idd)
@@ -59,7 +59,7 @@ def list_instances_bootvol(core_client, availability_domain, compartment_id, ins
             # print(bootvol.lifecycle_state)
             # print(bootvol.time_created)
 
-            my_bootvol.append(bootvol)
+        my_bootvol.append(bootvol)
 
     return my_bootvol
 
